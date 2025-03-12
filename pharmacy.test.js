@@ -133,4 +133,23 @@ describe("Pharmacy", () => {
       expect(updatedDrugs).toEqual(drugsAfter);
     });
   });
+
+  describe("Drug > Fervex", () => {
+    it("should decrease the expiresIn", () => {
+      // Before
+      const drugTestBefore = new Drug("Fervex", 2, 3);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
+
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
+
+      // After
+      const drugTestAfter = new Drug("Fervex", 1, 4);
+      const drugsAfter = [ drugTestAfter ];
+
+      // Assertion
+      expect(updatedDrugs[0].expiresIn).toEqual(drugsAfter[0].expiresIn);
+    });
+  });
 });
