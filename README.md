@@ -17,12 +17,13 @@ Hi and welcome to the team. We are in the future, and Falcon has extended its
 
 But there is more:
 
-- Once the expiration date has passed, Benefit degrades twice as fast.
+- Once the expiration date has passed, Benefit **degrades** (!= **enhances**)
+ twice as fast.
 - The Benefit of an item is never negative.
-- "Herbal Tea" actually increases in Benefit the older it gets. Benefit
- increases twice as fast after the expiration date.
+- "Herbal Tea" actually **increases** (!= **decreases**) in Benefit the older it
+ gets. Benefit increases twice as fast after the expiration date.
 - The Benefit of an item is never more than 50.
-- "Magic Pill" never expires nor decreases in Benefit.
+- "Magic Pill" never **expires** nor decreases in Benefit.
 - "Fervex", like Herbal Tea, increases in Benefit as its expiration date
  approaches. Benefit increases by 2 when there are 10 days or less and by 3 when
  there are 5 days or less but Benefit drops to 0 after the expiration date.
@@ -31,6 +32,8 @@ We have recently signed a supplier of "Dafalgan". This requires an update to our
  system:
 
 - "Dafalgan" degrades in Benefit twice as fast as normal drugs.
+
+-> Benefit degrades/enhances vs decreases/increases.
 
 ## Instructions
 
