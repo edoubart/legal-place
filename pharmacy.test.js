@@ -185,5 +185,22 @@ describe("Pharmacy", () => {
       // Assertion
       expect(updatedDrugs[0].benefit).toEqual(drugsAfter[0].benefit);
     });
+
+    it("should drop benefit to 0 after the expiration date", () => {
+      // Before
+      const drugTestBefore = new Drug("Fervex", 0, 4);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
+
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
+
+      // After
+      const drugTestAfter = new Drug("Fervex", -1, 0);
+      const drugsAfter = [ drugTestAfter ];
+
+      // Assertion
+      expect(updatedDrugs).toEqual(drugsAfter);
+    });
   });
 });
