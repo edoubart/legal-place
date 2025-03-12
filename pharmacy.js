@@ -35,6 +35,10 @@ export class Pharmacy {
 
   updateBenefitValue() {
     for (var i = 0; i < this.drugs.length; i++) {
+      // TODO: Replace those nested if..else if..else.. conditional statements
+      // AKA "Pyramid of Doom" by a switch case statements with a match
+      // arm/pattern for each individual drug.
+
       if (this.drugs[i].name === "Dafalgan") {
         if ((this.drugs[i].benefit - 2) >= 0) {
           this.drugs[i].benefit = this.drugs[i].benefit - 2;
