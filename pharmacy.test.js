@@ -28,10 +28,6 @@ describe("Pharmacy", () => {
     // Call site
     const updatedDrugs = pharmacy.updateBenefitValue();
 
-    // After
-    const drugTestAfter = new Drug("test", 0, 2);
-    const drugsAfter = [ drugTestAfter ];
-
     // Assertion
     expect(updatedDrugs[0].benefit).toBeGreaterThanOrEqual(0);
   });
@@ -86,6 +82,19 @@ describe("Pharmacy", () => {
 
       // Assertion
       expect(updatedDrugs[0].benefit).toEqual(drugsAfter[0].benefit);
+    });
+
+    it("should make sure that the benefit is never more than 50", () => {
+      // Before
+      const drugTestBefore = new Drug("Herbal Tea", 0, 50);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
+
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
+
+      // Assertion
+      expect(updatedDrugs[0].benefit).toBeLessThanOrEqual(50);
     });
   });
 });
