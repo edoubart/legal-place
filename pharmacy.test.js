@@ -97,4 +97,23 @@ describe("Pharmacy", () => {
       expect(updatedDrugs[0].benefit).toBeLessThanOrEqual(50);
     });
   });
+
+  describe("Drug > Magic Pill", () => {
+    it("should never decrease the benefit nor expiresIn", () => {
+      // Before
+      const drugTestBefore = new Drug("Magic Pill", 2, 3);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
+
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
+
+      // After
+      const drugTestAfter = new Drug("Magic Pill", 2, 3);
+      const drugsAfter = [ drugTestAfter ];
+
+      // Assertion
+      expect(updatedDrugs).toEqual(drugsAfter);
+    });
+  });
 });
