@@ -152,22 +152,22 @@ describe("Pharmacy", () => {
       expect(updatedDrugs[0].expiresIn).toEqual(drugsAfter[0].expiresIn);
     });
 
-    //it("should increase the benefit by 2 when expiresIn <= 10 days", () => {
-    //  // Before
-    //  const drugTestBefore = new Drug("Fervex", 2, 3);
-    //  const drugsBefore = [ drugTestBefore ];
-    //  const pharmacy = new Pharmacy(drugsBefore);
+    it("should increase the benefit by 2 when expiresIn <= 10 days", () => {
+      // Before
+      const drugTestBefore = new Drug("Fervex", 9, 3);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
 
-    //  // Call site
-    //  const updatedDrugs = pharmacy.updateBenefitValue();
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
 
-    //  // After
-    //  const drugTestAfter = new Drug("Fervex", 1, 5);
-    //  const drugsAfter = [ drugTestAfter ];
+      // After
+      const drugTestAfter = new Drug("Fervex", 8, 5);
+      const drugsAfter = [ drugTestAfter ];
 
-    //  // Assertion
-    //  expect(updatedDrugs[0].benefit).toEqual(drugsAfter[0].benefit);
-    //});
+      // Assertion
+      expect(updatedDrugs[0].benefit).toEqual(drugsAfter[0].benefit);
+    });
 
     it("should increase the benefit by 3 when expiresIn <= 5 days", () => {
       // Before
