@@ -84,6 +84,23 @@ describe("Pharmacy", () => {
       expect(updatedDrugs[0].benefit).toEqual(drugsAfter[0].benefit);
     });
 
+    it("should increase the benefit twice as fast once the expiration date has passed", () => {
+      // Before
+      const drugTestBefore = new Drug("Herbal Tea", 0, 4);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
+
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
+
+      // After
+      const drugTestAfter = new Drug("Herbal Tea", -1, 6);
+      const drugsAfter = [ drugTestAfter ];
+
+      // Assertion
+      expect(updatedDrugs[0].benefit).toEqual(drugsAfter[0].benefit);
+    });
+
     it("should make sure that the benefit is never more than 50", () => {
       // Before
       const drugTestBefore = new Drug("Herbal Tea", 0, 50);
