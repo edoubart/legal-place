@@ -203,4 +203,23 @@ describe("Pharmacy", () => {
       expect(updatedDrugs).toEqual(drugsAfter);
     });
   });
+
+  describe("Drug > Dafalgan", () => {
+    it("should decrease the expiresIn", () => {
+      // Before
+      const drugTestBefore = new Drug("Dafalgan", 2, 3);
+      const drugsBefore = [ drugTestBefore ];
+      const pharmacy = new Pharmacy(drugsBefore);
+
+      // Call site
+      const updatedDrugs = pharmacy.updateBenefitValue();
+
+      // After
+      const drugTestAfter = new Drug("Dafalgan", 1, 2);
+      const drugsAfter = [ drugTestAfter ];
+
+      // Assertion
+      expect(updatedDrugs[0].expiresIn).toEqual(drugsAfter[0].expiresIn);
+    });
+  });
 });
