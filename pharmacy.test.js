@@ -33,7 +33,7 @@ describe("Pharmacy", () => {
     const drugsAfter = [ drugTestAfter ];
 
     // Assertion
-    expect(updatedDrugs[0].expiresIn).toBeGreaterThanOrEqual(0);
+    expect(updatedDrugs[0].benefit).toBeGreaterThanOrEqual(0);
   });
 
   //it("should decrease the benefit twice as fast once the expiration date has passed", () => {
